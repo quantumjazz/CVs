@@ -1,0 +1,177 @@
+---
+name: Victor
+surname: Avramov
+position: "Assistant Professor"
+address: "Department of Administration and Management, New Bulgarian university"
+phone: +359 877 985 179
+www: vavramov.com
+profilepic: photo.jpg
+email: "vavramov@nbu.bg"
+twitter: victorstavramov
+github: quantumjazz
+linkedin: victor-avramov-ba1110b1
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Employment
+## Present
+```{r}
+library(tibble)
+tribble(
+  ~title, ~unit, ~startMonth, ~startYear, ~endMonth, ~endYear, ~where, ~detail,
+     "Head", "Quantitative Methods and Analysis Research Lab", "October", 2019, "Present", NA, "New Bulgarian university", "Risk identification and analysis",
+     "Head", "Quantitative Methods and Analysis Research Lab", "October", 2019, "Present", NA, "New Bulgarian university", "Macroeconomic analysis, analysis of market structures",
+     "Head", "Quantitative Methods and Analysis Research Lab", "October", 2019, "Present", NA, "New Bulgarian university", "Business processes optimization",
+     "Head", "Quantitative Methods and Analysis Research Lab", "October", 2019, "Present", NA, "New Bulgarian university", "Development and implementation of business analytics tools",
+     "Director", "Programming Council, Department of Administration and Management", "January", 2019, "Present", NA, "New Bulgarian university", "Managing the program consultants team",
+     "Director", "Programming Council, Department of Administration and Management", "January", 2019, "Present", NA, "New Bulgarian university", "Development of bachelor and masters programs at the Department",
+     "Director", "Programming Council, Department of Administration and Management", "January", 2019, "Present", NA, "New Bulgarian university", "Supervision of education processes",
+     "Assistant Professor", "Department of Administration and Management", "November", 2012, "Present", NA, "New Bulgarian university", "Teaching, student evaluation, course development",
+     "Assistant Professor", "Department of Administration and Management", "November", 2012, "Present", NA, "New Bulgarian university", "Engaging students in extracurricular activities",
+     "Assistant Professor", "Department of Administration and Management", "November", 2012, "Present", NA, "New Bulgarian university", "Study programmes promotion",
+) %>% 
+  detailed_entries(
+    with = title,
+    what = unit,
+    why = detail,
+    when = glue::glue("{startMonth} {startYear} -- {endMonth} {endYear}",.na = ""),
+    where = where
+  )
+```
+
+## Past 
+
+```{r}
+library(tibble)
+tribble(
+  ~title, ~unit, ~startMonth, ~startYear, ~endMonth, ~endYear, ~where, ~detail,
+  "Senior Expert", "Energy and Water Regulatory Commission", "January", 2020, "May", 2021, "Sofia - Bulgaria", "Market monitoring in compliance with Regulation (EU) No 1227/2011",
+   "Senior Expert", "Energy and Water Regulatory Commission", "January", 2020, "May", 2021, "Sofia - Bulgaria", "Analysis of market data from IBEX -- Independent Bulgarian Energy Exchange",
+     "Expert/member", "Risk Management Analysis Center", "October", 2013, "August", 2019, "New Bulgarian university", "Identification and analysis of risks in the energy sector",
+     "Expert/member", "Risk Management Analysis Center", "October", 2013, "August", 2019, "New Bulgarian university", "Development of risk mitigation and management strategies",
+     "Expert/member", "Risk Management Analysis Center", "October", 2013, "August", 2019, "New Bulgarian university", "Energy policy analysis",
+     "Expert/member", "Risk Management Analysis Center", "October", 2013, "August", 2019, "New Bulgarian university", "Energy markets analysis",
+     "Expert/member", "Risk Management Analysis Center", "October", 2013, "August", 2019, "New Bulgarian university", "Management of project 'Long term forecasting of electricity demand' for Transmission System Operator of Bulgaria",
+      "Expert/member", "Risk Management Analysis Center", "October", 2013, "August", 2019, "New Bulgarian university", "Preparation of regular reports about electricity and gas sectors in Bulgaria",
+    "Local Assistant", "European Parliament", "February", 2012, "August", 2014, "Sofia, Bulgaria", "Policy analysis, consulting, forecasting",
+    "Local Assistant", "European Parliament", "February", 2012, "August", 2014, "Sofia, Bulgaria", "Event management",
+    "Coordination Expert", "Political Party 'Democrats for Strong Bulgaria'", "January", 2006, "August", 2009, "Sofia, Bulgaria", "Energy policy analysis",
+      "Coordination Expert", "Political Party 'Democrats for Strong Bulgaria'", "January", 2006, "August", 2009, "Sofia, Bulgaria", "Member of the internal energy policy team",
+      "Coordination Expert", "Political Party 'Democrats for Strong Bulgaria'", "January", 2006, "August", 2009, "Sofia, Bulgaria", "Communication with institutional partners",
+      "Coordination Expert", "Political Party 'Democrats for Strong Bulgaria'", "January", 2006, "August", 2009, "Sofia, Bulgaria", "Election campaign management",
+      "Intern", "Ministry of Regional Development and Public Works", "May", 2002, "June", 2002, "Sofia, Bulgaria", "Project support for the European Community’s Phare Programme",
+) %>% 
+  detailed_entries(
+    with = title,
+    what = unit,
+    why = detail,
+    when = glue::glue("{startMonth} {startYear} -- {endMonth} {endYear}",.na = ""),
+    where = where
+  )
+```
+\
+
+# Education
+
+```{r education}
+tribble(
+  ~ degree, ~ uni, ~ loc, ~ dates, ~ details,
+  "Ph.D. in Political Science", "Sofia University, Department of Public Administration", "Sofia, Bulgaria", "2007--2012", 
+    list("Ph.D. Dissertation Title: 'The Process of EU Energy Policymaking: actors, communication, cooperation'"),
+  "M.Sc. in Public Administration", "Sofia University, Department of Public Administration", "Sofia, Bulgaria", "2002 --  2004", 
+    list("Master's Thesis Title: 'Max Weber's Concept of Bureaucracy and the Discource of Public Administration in 20th Century'"),
+  "B. Sc. in Public Administration", "Sofia University, Department of Public Administration", "Sofia, Bulgaria", "1998 --  2002", 
+  list("Courses include: Statistics, Research Methods, Organization Theory, Information Systems")
+) %>% 
+  detailed_entries(degree, dates, uni, loc, details)
+```
+
+# Distinctions and Grants
+
+```{r}
+tribble(
+  ~area, ~accomplishment, ~year, ~where,
+  "International Visitor Leadership Program", "U.S. Department of State", "June 2019", "USA",
+  "Study and Dialogue Programme for an International Delegation of Energy Experts", "Konrad Adenauer Foundation", "October 2014", "Germany",
+  "Scholarship Grant with subject 'Energy Policy of the European Union'", "Konrad Adenauer Foundation", "April -- August 2010", "University of Trier, Germany"
+  
+) %>% 
+  detailed_entries(
+    with = area,
+    what = accomplishment,
+    when = year,
+    where = where
+  )
+```
+
+# Selected Publications
+
+```{r publications}
+bibliography_entries("publications.bib", "Publications")
+```
+
+# Selected Media Appearances
+
+```{r}
+tribble(
+  ~area, ~accomplishment, ~year, ~where,
+    "The Miners are insecure about their jobs [in Bulgarian]", "https://www.bnr.bg/post/101051614/viktor-avramov-minyorite-izpitvat-nesigurnost-otnosno-darjavnata-politika-v-energetikata", "29.11.2018", "Bulgarian National Radio",
+  "Victor Avramov with comment on the Belene NPP project [in Bulgarian]", "https://www.bloombergtv.bg/video/viktor-avramov-s-komentar-za-stsenariite-okolo-aets-belene", "07.06.2018", "Bloomberg TV Bulgaria",
+  "Victor Avramov with comment on internal and external energy issues [in Bulgarian]", "https://www.bloombergtv.bg/video/viktor-avramov-s-komentar-po-energiyni-temi-ot-vanshno-i-vatreshno-estestvo", "12.12.2017", "Bloomberg TV Bulgaria",
+  "Victor Avramov with comment on expected USA sanctions on Russia [in Bulgarian]", "http://www.bloombergtv.bg/video/viktor-avramov-s-komentar-za-ochakvanite-sanktsii-po-osta-sasht-rusiya", "26.07.2017", "Bloomberg TV Bulgaria",
+  "Are there forbidden words in negotiations? [in Bulgarian]", "http://m.btvnovinite.bg/article/bulgaria/ima-li-zabraneni-dumi-pri-uspeshnite-pregovori-za-koalicija.html", "08.04.2017", "bTV",
+  "Victor Avramov on the decisions of the Bulgarian Competition Commission [in Bulgarian]", "http://www.bloombergtv.bg/video/viktor-avramov-za-reshenieto-na-kzk", "29.03.2017", "Bloomberg TV Bulgaria",
+  "On energy efficiency and energy poverty [in Bulgarian]", "http://www.bloombergtv.bg/video/dragomir-tsanev-i-viktor-avramov-za-energiynata-efektivnost", "09.12.2016", "Bloomberg TV Bulgaria",
+) %>% 
+  detailed_entries(
+    with = area,
+    what = accomplishment,
+    when = year,
+    where = where
+  )
+```
+
+# Skills
+## Technical
+
+```{r techtable}
+tribble(
+   ~`Coding Languages`, ~Software, ~Other,
+  "R -- Python -- Matlab",
+  "RStudio -- Excel -- Lyx -- Mendeley",
+  "Linux -- Git -- Markdown -- LaTex"
+) %>%
+  kableExtra::kable(booktabs = T, align = 'c', escape = F, format = "latex") %>%
+  kableExtra::kable_styling(full_width = F, font_size = 9, latex_options = "hold_position") %>% 
+  kableExtra::row_spec(0, bold = T, color = "#009acd") %>% 
+  kableExtra::row_spec(1, bold = F, color = "#7f7f7f") %>% 
+  kableExtra::column_spec(column = 1:3, width = '4.75cm')
+```
+
+## Languages
+
+```{r langforeign, results='markup'}
+data.frame(
+  Skill = c("Reading", "Writing", "Listening","Speaking"),
+  Bulgarian = kableExtra::cell_spec(c(rep("Native", 4)), 'latex', color = '#005c7b'), 
+  English = kableExtra::cell_spec(c("C1","C1","C1","C1"), 'latex', color = '#009acd'), 
+  German = kableExtra::cell_spec(c("B1","B1","B1","B1"), 'latex', color = '#7fcce6'), 
+  Russian = kableExtra::cell_spec(c("B2","B2","B2","B2"), 'latex', color = '#4cb8dc')
+) %>%
+  kableExtra::kable(booktabs = T, align = 'c', escape = F, format = "latex") %>%
+  kableExtra::kable_styling(full_width = F, font_size = 9, latex_options = "hold_position") %>% 
+  kableExtra::footnote(
+    footnote_as_chunk = T,
+    general_title = " ",
+    general = "\\\\tiny Common European Framework of Reference for Languages: A1/A2: Basic User. B1/B2: Independent User. C1/C2: Proficient User",
+    escape = F
+  ) %>%
+  kableExtra::column_spec(column = 1:6, width = '2.4cm')
+```
+
